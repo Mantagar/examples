@@ -1,0 +1,8 @@
+Treść pliku
+    Druga linia
+    Druga linia
+    Druga linia
+    Druga linia
+       Druga linia
+     \n\n\a\a
+asddasd

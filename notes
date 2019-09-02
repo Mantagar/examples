@@ -1,0 +1,5 @@
+./gen.sh 2000 | tail -n+2 | sort -k2,2 -k1 | tr -s ' ' | cut -f 1,2 -d ' ' | uniq -c | sort -k1 | tail -n10
+xxd breakme | cut -c52- | tr -d '\n' | grep -Eo "[a-zA-Z0-9]{8,}"
+grep --binary-files=text -Eo '[a-zA-Z0-9]{8,}' breakme
+for i in $(grep --binary-files=text -Eo '[a-zA-Z0-9]{8,}' breakme); do echo -ne $i'\t\t\t'; echo $i | ./breakme; done
+strings -8 breakme | grep -v ^.*[._].*$
